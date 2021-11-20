@@ -1,0 +1,4 @@
+# The littlefs dependency.
+littlefs-*/
+# The test executable.
+test_ringbuffer
