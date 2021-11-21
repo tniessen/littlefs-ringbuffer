@@ -3,7 +3,7 @@
 #include <string.h>
 
 int lfsring_open(lfsring_t* ring, lfs_t* lfs, const char* path,
-                 lfsring_config_t* config) {
+                 const lfsring_config_t* config) {
   LFSRING_TRACE("lfsring_open(%p, %p, \"%s\", %p {  })", (void*) ring, (void*) lfs, path, (void*) config);
 
   ring->attr.type = config->attr_metadata;

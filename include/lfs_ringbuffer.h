@@ -101,7 +101,7 @@ typedef struct {
  * ring buffer operations are not.
  */
 int lfsring_open(lfsring_t* ring, lfs_t* lfs, const char* path,
-                 lfsring_config_t* config);
+                 const lfsring_config_t* config);
 
 /**
  * Checks if a ring buffer is empty.
