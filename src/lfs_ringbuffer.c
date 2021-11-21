@@ -10,7 +10,7 @@ int lfsring_open(lfsring_t* ring, lfs_t* lfs, const char* path,
   ring->attr.buffer = ring->attr_buf.bytes;
   ring->attr.size = sizeof(ring->attr_buf.bytes);
 
-  assert(sizeof(ring->attr_buf.bytes) == sizeof(ring->attr_buf));
+  LFS_ASSERT(sizeof(ring->attr_buf.bytes) == sizeof(ring->attr_buf));
 
   // If the attribute does not exist, littlefs will silently create it. Thus,
   // we need to initialize the buffer.
