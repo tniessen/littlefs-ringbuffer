@@ -5,11 +5,13 @@ on: [push, pull_request]
 jobs:
   test:
     strategy:
+      fail-fast: false
       matrix:
+        lfs: [2.4.2, 2.5.1]
         cc: [gcc, clang]
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
       uses: actions/checkout@v4
     - name: make -C test
-      run: make -C test CC=${{ matrix.cc }}
+      run: make -C test CC=${{ matrix.cc }} LFS_VERSION=${{ matrix.lfs }}
