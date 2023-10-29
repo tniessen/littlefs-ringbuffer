@@ -1,4 +1,4 @@
-LFS_VERSION ?= 2.6.1
+LFS_VERSION ?= 2.7.1
 LIB_SOURCE = ../src/lfs_ringbuffer.c
 TEST_SOURCE = test_ringbuffer.c
 LFS_SOURCES_RELATIVE = lfs.c lfs_util.c bd/lfs_rambd.c
