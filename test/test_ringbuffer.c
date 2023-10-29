@@ -372,12 +372,21 @@ int main(void) {
   struct lfs_rambd_config rambd_config = {
 #if LFS_VERSION < 0x00020006
     .erase_value = 0,
+#elif LFS_VERSION >= 0x00020008
+    .read_size = LFS_READ_SIZE,
+    .prog_size = LFS_PROG_SIZE,
+    .erase_size = LFS_BLOCK_SIZE,
+    .erase_count = LFS_BLOCK_COUNT,
 #endif
     .buffer = NULL
   };
 
   // Allocate the in-memory block device.
+#if LFS_VERSION >= 0x00020008
+  int err = lfs_rambd_create(&fs_config, &rambd_config);
+#else
   int err = lfs_rambd_createcfg(&fs_config, &rambd_config);
+#endif
   assert(err == 0);
 
   run_tests_with_config(&fs_config);
