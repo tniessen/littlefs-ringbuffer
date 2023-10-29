@@ -370,7 +370,10 @@ int main(void) {
   // We shouldn't need to set an erase value, but if we don't, the rambd won't
   // initialize the allocated memory at all, leading to memcheck warnings.
   struct lfs_rambd_config rambd_config = {
-    .erase_value = 0
+#if LFS_VERSION < 0x00020006
+    .erase_value = 0,
+#endif
+    .buffer = NULL
   };
 
   // Allocate the in-memory block device.
