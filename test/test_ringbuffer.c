@@ -1,8 +1,8 @@
-#include <assert.h>
-
 #include <lfs_ringbuffer.h>
 
 #include <lfs_rambd.h>
+
+#include <assert.h>
 
 #define LFS_READ_SIZE      16
 #define LFS_PROG_SIZE      LFS_READ_SIZE
