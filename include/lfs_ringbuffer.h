@@ -8,6 +8,7 @@
 #define LFS_RINGBUFFER_H
 
 #include <lfs.h>
+#include <lfs_util.h>
 
 #ifdef __cplusplus
 extern "C"
